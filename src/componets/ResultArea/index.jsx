@@ -12,32 +12,10 @@ const ResultArea = (props) => {
     });
 
     if (movieIndex >= 0) {
-      // const updatedMovie = movies[movieIndex];
-      // updatedMovie.rating = 10;
-      // console.log(updatedMovie);
-      const updatedMovie = movies[movieIndex];
-      updatedMovie.rating = 10;
-      const updatedMovies = [...movies];
-      updatedMovies[movieIndex] = updatedMovie;
-      setMovies(updatedMovies);
-      // setMovies(updatedMovies);
-      // setMovies([...movies, ])
+      const updatedMovies = [...movies]; // copy the state
+      updatedMovies[movieIndex] = { ...updatedMovies[movieIndex], rating: 10 }; // update the object using its position/index
+      setMovies(updatedMovies); //set state
     }
-
-    // console.log(movieIndex);
-    // const updatedMovieRating = movies.find((movie) => {
-    //   return movie.imdbID === movieID;
-    // });
-    // if (updatedMovieRating) {
-    //   updatedMovieRating.rating = 10;
-    //   setMovies([...movies, {updatedMovieRating }]);
-    // }
-
-    // movies.map(movie => {
-    //   if (movie.imdbID === movieID){
-    //     setMovies([...movie])
-    //   }
-    // })
   };
 
   useEffect(() => {
